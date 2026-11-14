@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21152f">
+<title>عالم رانيا السري 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap');
+
+:root{
+ --pink:#ff9bc8;
+ --pink2:#e76da9;
+ --purple:#9b78dc;
+ --gold:#f8d58b;
+ --white:#fff8fc;
+ --dark:#21152f;
+ --glass:rgba(255,255,255,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+ width:100%;
+ height:100%;
+ overflow:hidden;
+}
+
+body{
+ font-family:'Cairo',sans-serif;
+ color:var(--white);
+ background:#21152f;
+}
+
+button{font-family:inherit}
+
+/* خلفية العالم */
+
+#universe{
+ position:fixed;
+ inset:0;
+ z-index:-10;
+ background:
+ radial-gradient(circle at 20% 20%,#613d82 0,transparent 35%),
+ radial-gradient(circle at 80% 75%,#743d70 0,transparent 35%),
+ linear-gradient(135deg,#171426,#30203f,#21152f);
+ overflow:hidden;
+}
+
+#universe::before{
+ content:"";
+ position:absolute;
+ inset:-50%;
+ background:conic-gradient(from 0deg,transparent,#e98cc522,transparent,#a78bfa22,transparent);
+ animation:universeSpin 35s linear infinite;
+}
+
+@keyframes universeSpin{
+ to{transform:rotate(360deg)}
+}
+
+#stars{
+ position:fixed;
+ inset:0;
+ z-index:-4;
+ pointer-events:none;
+}
+
+.star{
+ position:absolute;
+ width:3px;
+ height:3px;
+ border-radius:50%;
+ background:#fff;
+ box-shadow:0 0 9px #fff;
+ animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+ from{opacity:.2;transform:scale(.7)}
+ to{opacity:1;transform:scale(1.4)}
+}
+
+/* زخارف متحركة */
+
+#particles{
+ position:fixed;
+ inset:0;
+ overflow:hidden;
+ z-index:1;
+ pointer-events:none;
+}
+
+.particle{
+ position:absolute;
+ bottom:-50px;
+ animation:rise linear forwards;
+ opacity:.8;
+}
+
+@keyframes rise{
+ 0%{transform:translateY(0) rotate(0);opacity:0}
+ 15%{opacity:.8}
+ 100%{transform:translateY(-115vh) rotate(300deg);opacity:0}
+}
+
+/* الشريط العلوي */
+
+.topbar{
+ position:fixed;
+ top:12px;
+ left:12px;
+ right:12px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ z-index:50;
+ gap:10px;
+}
+
+.brand,.music{
+ background:#ffffff18;
+ border:1px solid #ffffff30;
+ backdrop-filter:blur(12px);
+ border-radius:30px;
+ padding:8px 15px;
+ color:white;
+ font-weight:800;
+ font-size:13px;
+}
+
+.music{
+ cursor:pointer;
+}
+
+/* نظام الصفحات */
+
+.viewport{
+ position:fixed;
+ inset:0;
+ overflow:hidden;
+ z-index:2;
+}
+
+.track{
+ height:100%;
+ width:1000%;
+ display:flex;
+ direction:ltr;
+ transition:transform .8s cubic-bezier(.77,0,.18,1);
+}
+
+.page{
+ flex:0 0 10%;
+ width:10%;
+ height:100%;
+ position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:70px 15px 65px;
+ overflow:hidden;
+ direction:rtl;
+}
+
+/* صور Hello Kitty في كل صفحة */
+
+.kitty-layer{
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ z-index:2;
+ overflow:hidden;
+}
+
+.kitty-layer img{
+ position:absolute;
+ width:clamp(60px,10vw,115px);
+ height:clamp(60px,10vw,115px);
+ object-fit:contain;
+ opacity:.82;
+ filter:drop-shadow(0 5px 15px #ff8acb50);
+ animation:kittyFloat 4s ease-in-out infinite alternate;
+}
+
+.kitty-layer img:nth-child(1){top:12%;right:2%}
+.kitty-layer img:nth-child(2){top:12%;left:2%;animation-delay:.5s}
+.kitty-layer img:nth-child(3){top:42%;right:1%;animation-delay:1s}
+.kitty-layer img:nth-child(4){top:42%;left:1%;animation-delay:1.5s}
+.kitty-layer img:nth-child(5){bottom:7%;right:7%;animation-delay:2s}
+.kitty-layer img:nth-child(6){bottom:7%;left:7%;animation-delay:2.5s}
+
+@keyframes kittyFloat{
+ from{translate:0 0;rotate:-5deg}
+ to{translate:0 -15px;rotate:5deg}
+}
+
+/* البطاقات */
+
+.card{
+ position:relative;
+ z-index:5;
+ width:min(680px,96%);
+ max-height:100%;
+ overflow-y:auto;
+ text-align:center;
+ padding:clamp(23px,5vw,42px);
+ border:1px solid #ffffff35;
+ border-radius:30px;
+ background:linear-gradient(145deg,#ffffff19,#ffffff0b);
+ backdrop-filter:blur(18px);
+ box-shadow:0 20px 65px #00000035,inset 0 0 30px #ffffff08;
+ animation:appear .7s ease both;
+}
+
+@keyframes appear{
+ from{opacity:0;transform:translateY(20px) scale(.96)}
+ to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.eyebrow{
+ color:#ffc0df;
+ font-size:12px;
+ letter-spacing:3px;
+ font-weight:800;
+ margin-bottom:12px;
+}
+
+h1,h2,h3{
+ color:#ffd3e9;
+ line-height:1.7;
+ margin-bottom:12px;
+}
+
+h1{font-size:clamp(29px,6vw,46px)}
+h2{font-size:clamp(24px,5vw,35px)}
+h3{font-size:20px}
+
+p{
+ line-height:2.1;
+ font-size:clamp(14px,2.5vw,17px);
+ margin:10px 0;
+ color:#fff0f8;
+}
+
+.gold{color:var(--gold);font-weight:800}
+.pink{color:#ffadd5;font-weight:800}
+
+.big{
+ font-size:65px;
+ display:block;
+ margin:10px auto;
+ animation:heartbeat 1.7s infinite;
+}
+
+@keyframes heartbeat{
+ 0%,100%{transform:scale(1)}
+ 50%{transform:scale(1.15)}
+}
+
+.line{
+ width:80px;
+ height:2px;
+ margin:18px auto;
+ background:linear-gradient(to right,transparent,#ffadd5,transparent);
+}
+
+/* الأزرار */
+
+.actions{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:11px;
+ margin-top:23px;
+}
+
+.btn{
+ border:1px solid #ffffff40;
+ border-radius:30px;
+ padding:12px 23px;
+ color:#321d35;
+ background:linear-gradient(135deg,#ffd5e9,#f59bc7);
+ font-weight:900;
+ font-size:14px;
+ cursor:pointer;
+ transition:.25s;
+ box-shadow:0 7px 20px #00000020;
+}
+
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+
+.btn.alt{
+ background:#ffffff17;
+ color:white;
+ border-color:#ffffff40;
+}
+
+.btn.gold-btn{
+ background:linear-gradient(135deg,#ffe9ad,#e9bd69);
+ color:#463019;
+}
+
+/* مؤشرات الصفحات */
+
+.progress{
+ position:fixed;
+ z-index:50;
+ bottom:14px;
+ left:50%;
+ transform:translateX(-50%);
+ display:flex;
+ gap:7px;
+ background:#ffffff18;
+ padding:10px 14px;
+ border-radius:30px;
+ border:1px solid #ffffff25;
+ backdrop-filter:blur(10px);
+}
+
+.dot{
+ width:7px;
+ height:7px;
+ background:#ffffff55;
+ border-radius:20px;
+ transition:.3s;
+}
+
+.dot.active{
+ width:23px;
+ background:#ffb5d9;
+}
+
+/* الأظرف */
+
+.envelopes{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px;
+ margin:22px 0;
+}
+
+.envelope{
+ background:#ffffff13;
+ border:1px solid #ffffff30;
+ border-radius:18px;
+ padding:15px 5px;
+ cursor:pointer;
+ transition:.3s;
+}
+
+.envelope:hover{transform:translateY(-5px);background:#ffffff25}
+
+.envelope .icon{font-size:38px;display:block}
+.envelope span:last-child{font-size:12px;color:#ffd6e9;font-weight:700}
+
+.secret{
+ display:none;
+ margin-top:15px;
+ padding:18px;
+ border-radius:18px;
+ background:#ffffff15;
+ border:1px dashed #ffc0df;
+ animation:appear .5s ease;
+}
+
+.secret.show{display:block}
+
+/* صناديق الهدايا */
+
+.gifts{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px;
+ margin:22px 0;
+}
+
+.gift{
+ border:1px solid #ffffff30;
+ background:#ffffff12;
+ border-radius:18px;
+ padding:16px 5px;
+ cursor:pointer;
+ transition:.3s;
+}
+
+.gift:hover{transform:scale(1.06)}
+.gift b{display:block;font-size:44px}
+.gift small{color:#ffe0ef}
+
+/* أسئلة */
+
+.question{
+ font-size:20px;
+ font-weight:800;
+ color:#ffdbec;
+ margin:15px 0;
+}
+
+.answers{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin-top:18px;
+}
+
+.answer{
+ padding:12px;
+ border-radius:15px;
+ background:#ffffff13;
+ border:1px solid #ffffff30;
+ color:white;
+ cursor:pointer;
+ font-weight:700;
+ transition:.2s;
+}
+
+.answer:hover{background:#ffffff2d;transform:scale(1.02)}
+
+.feedback{
+ min-height:55px;
+ margin-top:17px;
+ color:#ffe1ef;
+ font-weight:800;
+ line-height:1.9;
+}
+
+/* معرض الصور */
+
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+ max-width:430px;
+ margin:20px auto;
+}
+
+.gallery img{
+ width:100%;
+ aspect-ratio:1;
+ object-fit:contain;
+ background:#ffffff13;
+ border:1px solid #ffffff40;
+ border-radius:18px;
+ padding:5px;
+}
+
+/* الحديقة */
+
+.garden{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px;
+ margin:20px auto;
+ max-width:430px;
+}
+
+.flower{
+ font-size:48px;
+ cursor:pointer;
+ padding:10px;
+ border-radius:20px;
+ background:#ffffff10;
+ border:1px solid #ffffff25;
+ transition:.3s;
+}
+
+.flower:hover{transform:scale(1.18) rotate(10deg)}
+
+/* النجوم */
+
+.star-game{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:15px;
+ margin:22px auto;
+}
+
+.collect-star{
+ font-size:38px;
+ cursor:pointer;
+ transition:.2s;
+ user-select:none;
+}
+
+.collect-star:hover{transform:scale(1.3) rotate(20deg)}
+
+.score{
+ color:var(--gold);
+ font-weight:900;
+ font-size:20px;
+}
+
+/* اللغز */
+
+input{
+ width:min(300px,100%);
+ padding:13px 17px;
+ border-radius:15px;
+ border:1px solid #ffc0df;
+ background:#ffffff18;
+ color:white;
+ text-align:center;
+ font-family:inherit;
+ font-size:17px;
+ outline:none;
+ margin:10px 0;
+}
+
+input::placeholder{color:#ffffff88}
+
+/* نهاية */
+
+.final-heart{
+ font-size:85px;
+ animation:heartbeat 1.5s infinite;
+}
+
+/* الهاتف */
+
+@media(max-width:600px){
+ .page{padding:68px 9px 62px}
+ .card{padding:21px 15px;width:97%;border-radius:24px}
+ .kitty-layer img{width:56px;height:56px;opacity:.6}
+ .kitty-layer img:nth-child(3),.kitty-layer img:nth-child(4){top:auto;bottom:27%}
+ .envelopes,.gifts{gap:7px}
+ .envelope{padding:12px 3px}
+ .envelope .icon{font-size:31px}
+ .gift b{font-size:35px}
+ .gallery{gap:7px}
+ .topbar{top:8px}
+ .brand,.music{font-size:11px;padding:7px 10px}
+}
+
+@media(max-height:650px){
+ .card{padding:16px}
+ .page{padding-top:58px;padding-bottom:55px}
+ p{line-height:1.8}
+ .big{font-size:48px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="universe"></div>
+<div id="stars"></div>
+<div id="particles"></div>
+
+<audio id="music" src="music.mp3" loop preload="auto"></audio>
+
+<div class="topbar">
+ <div class="brand">🌙 عالم رانيا السري</div>
+ <button class="music" id="musicButton">♫ تشغيل الموسيقى</button>
+</div>
+
+<div class="viewport">
+<div class="track" id="track">
+
+<!-- 1: البداية السينمائية -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1">
+  <img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3">
+  <img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5">
+  <img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">WELCOME TO YOUR SECRET WORLD</div>
+  <span class="big">🌙</span>
+  <h1>هناك عالم صغير ينتظركِ</h1>
+  <div class="line"></div>
+  <p>عالم لا يشبه أي مكان آخر...</p>
+  <p>فيه أسرار ورسائل وهدايا وأشياء صغيرة صُنعت لتجعلكِ تبتسمين.</p>
+  <h2 class="gold">هل أنتِ مستعدة يا رانيا؟</h2>
+  <div class="actions">
+   <button class="btn" id="enter">افتحي البوابة ✨</button>
+  </div>
+  <p id="musicStatus" style="font-size:12px"></p>
+ </div>
+</section>
+
+<!-- 2: بوابة العالم -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">THE MAGIC GATE</div>
+  <span class="big">🗝️</span>
+  <h2>لقد دخلتِ عالمكِ الخاص</h2>
+  <p>هنا لا توجد قواعد كثيرة، فقط استمتعي بالرحلة.</p>
+  <p>كل باب ستفتحينه سيكشف لكِ شيئًا جديدًا.</p>
+  <div class="line"></div>
+  <p class="pink">قاعدة هذا العالم: ابتسامتكِ أولًا 💗</p>
+  <div class="actions">
+   <button class="btn" onclick="next()">لنكتشف الأسرار</button>
+  </div>
+ </div>
+</section>
+
+<!-- 3: الرسائل السرية -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">SECRET LETTERS</div>
+  <h2>ثلاثة أظرف تنتظركِ 💌</h2>
+  <p>اختاري ظرفًا وافتحي الرسالة التي بداخله.</p>
+  <div class="envelopes">
+   <div class="envelope" onclick="openLetter(0)">
+    <span class="icon">💌</span><span>الظرف الأول</span>
+   </div>
+   <div class="envelope" onclick="openLetter(1)">
+    <span class="icon">💗</span><span>الظرف الثاني</span>
+   </div>
+   <div class="envelope" onclick="openLetter(2)">
+    <span class="icon">🌷</span><span>الظرف الثالث</span>
+   </div>
+  </div>
+  <div class="secret" id="letter">
+   <h3 id="letterTitle">رسالة سرية</h3>
+   <p id="letterText"></p>
+  </div>
+  <div class="actions">
+   <button class="btn" onclick="next()">إلى المغامرة التالية</button>
+  </div>
+ </div>
+</section>
+
+<!-- 4: الاختبار الرومانسي -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">A LITTLE LOVE QUIZ</div>
+  <h2>اختبار رانيا الخاص 💞</h2>
+  <div class="question" id="question">ما الشيء الذي يجعل اليوم أجمل؟</div>
+  <div class="answers" id="answers">
+   <button class="answer" onclick="choose(0)">رسالة جميلة 💌</button>
+   <button class="answer" onclick="choose(1)">وردة مفاجئة 🌹</button>
+   <button class="answer" onclick="choose(2)">وقت جميل معًا 🌙</button>
+   <button class="answer" onclick="choose(3)">كل ما سبق 💗</button>
+  </div>
+  <div class="feedback" id="quizFeedback">اختاري إجابتكِ، لا توجد إجابة خاطئة.</div>
+  <div class="actions">
+   <button class="btn alt" onclick="next()">تجاوز السؤال</button>
+  </div>
+ </div>
+</section>
+
+<!-- 5: صناديق الهدايا -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">THE GIFT ROOM</div>
+  <h2>غرفة الهدايا 🎁</h2>
+  <p>أمامكِ ثلاثة صناديق. كل صندوق يخفي مفاجأة مختلفة.</p>
+  <div class="gifts">
+   <div class="gift" onclick="openGift(0)"><b>🎁</b><small>هدية الورد</small></div>
+   <div class="gift" onclick="openGift(1)"><b>🎀</b><small>هدية الدلال</small></div>
+   <div class="gift" onclick="openGift(2)"><b>💝</b><small>هدية القلب</small></div>
+  </div>
+  <div class="secret" id="giftResult">
+   <h3 id="giftTitle"></h3>
+   <p id="giftText"></p>
+  </div>
+  <div class="actions">
+   <button class="btn" onclick="next()">أريد اكتشاف المزيد</button>
+  </div>
+ </div>
+</section>
+
+<!-- 6: الحديقة السحرية -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">THE SECRET GARDEN</div>
+  <h2>حديقة الأمنيات 🌸</h2>
+  <p>اضغطي على كل زهرة لتكتشفي أمنية صغيرة مخبأة بداخلها.</p>
+  <div class="garden">
+   <div class="flower" onclick="flower(0)">🌷</div>
+   <div class="flower" onclick="flower(1)">🌹</div>
+   <div class="flower" onclick="flower(2)">🌸</div>
+   <div class="flower" onclick="flower(3)">🌺</div>
+   <div class="flower" onclick="flower(4)">🌼</div>
+   <div class="flower" onclick="flower(5)">💐</div>
+  </div>
+  <div class="secret" id="flowerMessage">
+   <p id="flowerText"></p>
+  </div>
+  <div class="actions">
+   <button class="btn" onclick="next()">إلى لعبة النجوم ⭐</button>
+  </div>
+ </div>
+</section>
+
+<!-- 7: لعبة النجوم -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">STAR COLLECTOR</div>
+  <h2>اجمعي النجوم ✨</h2>
+  <p>اضغطي على النجوم لتحصلي عليها. اجمعي خمس نجوم لفتح الرسالة.</p>
+  <div class="score">النجوم: <span id="score">0</span> / 5</div>
+  <div class="star-game" id="starGame">
+   <span class="collect-star" onclick="collect(this)">⭐</span>
+   <span class="collect-star" onclick="collect(this)">🌟</span>
+   <span class="collect-star" onclick="collect(this)">✨</span>
+   <span class="collect-star" onclick="collect(this)">⭐</span>
+   <span class="collect-star" onclick="collect(this)">🌟</span>
+  </div>
+  <div class="secret" id="starReward">
+   <h3>لقد فزتِ! 🏆</h3>
+   <p>أنتِ نجمة هذا العالم، ولا توجد نجمة أخرى تشبهكِ.</p>
+  </div>
+  <div class="actions">
+   <button class="btn" onclick="next()">وجدتُ بابًا جديدًا</button>
+  </div>
+ </div>
+</section>
+
+<!-- 8: معرض Hello Kitty -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">HELLO KITTY COLLECTION</div>
+  <h2>ركن كيتّي 🎀</h2>
+  <p>لا تكتمل هذه الرحلة دون شخصياتكِ اللطيفة المفضلة.</p>
+  <div class="gallery">
+   <img src="Kitty1.png" alt="Hello Kitty 1">
+   <img src="Kitty2.png" alt="Hello Kitty 2">
+   <img src="Kitty3.png" alt="Hello Kitty 3">
+   <img src="Kitty4.png" alt="Hello Kitty 4">
+   <img src="Kitty5.png" alt="Hello Kitty 5">
+   <img src="Kitty6.png" alt="Hello Kitty 6">
+  </div>
+  <p class="pink">كل هذه التفاصيل الصغيرة تليق بكِ 💗</p>
+  <div class="actions">
+   <button class="btn" onclick="next()">إلى اللغز السري 🔐</button>
+  </div>
+ </div>
+</section>
+
+<!-- 9: اللغز -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">THE FINAL SECRET</div>
+  <span class="big">🔐</span>
+  <h2>الباب الأخير مغلق</h2>
+  <p>هناك كلمة سر تفتح الرسالة الأخيرة.</p>
+  <p class="gold">ما اسم صاحبة هذا العالم؟</p>
+  <input id="password" type="text" placeholder="اكتبي اسمكِ هنا">
+  <div class="actions">
+   <button class="btn gold-btn" onclick="unlock()">افتحي الباب 🔑</button>
+  </div>
+  <div class="secret" id="unlockMessage">
+   <h3>أحسنتِ يا رانيا! 💗</h3>
+   <p>لقد وصلتِ إلى آخر سر في هذا العالم.</p>
+   <button class="btn" onclick="next()">اكتشفي الرسالة الأخيرة</button>
+  </div>
+  <p id="passwordFeedback" class="pink"></p>
+ </div>
+</section>
+
+<!-- 10: النهاية -->
+<section class="page">
+ <div class="kitty-layer">
+  <img src="Kitty1.png" alt="Kitty 1"><img src="Kitty2.png" alt="Kitty 2">
+  <img src="Kitty3.png" alt="Kitty 3"><img src="Kitty4.png" alt="Kitty 4">
+  <img src="Kitty5.png" alt="Kitty 5"><img src="Kitty6.png" alt="Kitty 6">
+ </div>
+ <div class="card">
+  <div class="eyebrow">A WORLD MADE FOR YOU</div>
+  <div class="final-heart">💗</div>
+  <h1>إلى رانيا الجميلة</h1>
+  <div class="line"></div>
+  <p>
+   انتهت الرحلة، لكن أتمنى ألا تنتهي ابتسامتكِ.
+  </p>
+  <p>
+   أردت أن أصنع لكِ عالمًا صغيرًا مليئًا بالألوان
+   والرسائل والمفاجآت، لأنكِ تستحقين لحظات جميلة
+   وتفاصيل تجعلكِ تشعرين بأنكِ مميزة.
+  </p>
+  <p class="gold">
+   أتمنى أن تبقى أيامكِ جميلة مثل قلبكِ 🌷
+  </p>
+  <h2>أنتِ حكاية جميلة 💞</h2>
+  <div class="actions">
+   <button class="btn" onclick="celebrate()">احتفال أخير 🎉</button>
+   <button class="btn alt" onclick="goTo(0)">إعادة الرحلة ↺</button>
+  </div>
+  <p id="celebration"></p>
+ </div>
+</section>
+
+</div>
+</div>
+
+<div class="progress" id="progress">
+ <span class="dot active"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+</div>
+
+<script>
+/* النجوم في الخلفية */
+
+const starField=document.getElementById('stars');
+
+for(let i=0;i<90;i++){
+ const s=document.createElement('span');
+ s.className='star';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=Math.random()*3+'s';
+ s.style.opacity=Math.random();
+ starField.appendChild(s);
+}
+
+/* التنقل */
+
+const track=document.getElementById('track');
+const dots=document.querySelectorAll('.dot');
+let page=0;
+const total=10;
+
+function update(){
+ track.style.transform=`translateX(${page*10}%)`;
+ dots.forEach((d,i)=>d.classList.toggle('active',i===page));
+}
+
+function next(){
+ if(page<total-1){
+  page++;
+  update();
+ }
+}
+
+function previous(){
+ if(page>0){
+  page--;
+  update();
+ }
+}
+
+function goTo(n){
+ page=Math.max(0,Math.min(total-1,n));
+ update();
+}
+
+/* الموسيقى */
+
+const music=document.getElementById('music');
+const musicButton=document.getElementById('musicButton');
+const musicStatus=document.getElementById('musicStatus');
+
+async function playMusic(){
+ try{
+  music.volume=.65;
+  await music.play();
+  musicButton.textContent='♫ إيقاف الموسيقى';
+  if(musicStatus)musicStatus.textContent='الموسيقى ترافق رحلتكِ الآن 🎶';
+  return true;
+ }catch(e){
+  musicButton.textContent='♫ تشغيل الموسيقى';
+  if(musicStatus)musicStatus.textContent='لم تعمل الموسيقى. تحققي من ملف music.mp3';
+  return false;
+ }
+}
+
+function pauseMusic(){
+ music.pause();
+ musicButton.textContent='♫ تشغيل الموسيقى';
+}
+
+musicButton.addEventListener('click',()=>{
+ if(music.paused)playMusic();
+ else pauseMusic();
+});
+
+/* زر الدخول يشغل الموسيقى أثناء النقر */
+
+document.getElementById('enter').addEventListener('click',async()=>{
+ await playMusic();
+ next();
+});
+
+/* الرسائل السرية */
+
+const letters=[
+ {
+  title:'الرسالة الأولى 🌷',
+  text:'أتمنى أن تجدي في كل يوم سببًا جديدًا للضحك، وأن لا تنسي أبدًا كم أنتِ جميلة ومميزة.'
+ },
+ {
+  title:'الرسالة الثانية 💗',
+  text:'بعض الأشخاص يتركون أثرًا لطيفًا في يومنا دون أن يفعلوا شيئًا كبيرًا، وأنتِ من هؤلاء الأشخاص.'
+ },
+ {
+  title:'الرسالة الثالثة 🌙',
+  text:'لو كان بإمكاني أن أهديكِ شيئًا، لأهديتكِ أيامًا هادئة، وقلبًا مطمئنًا، وفرحًا لا ينتهي.'
+ }
+];
+
+function openLetter(i){
+ document.getElementById('letterTitle').textContent=letters[i].title;
+ document.getElementById('letterText').textContent=letters[i].text;
+ document.getElementById('letter').classList.add('show');
+ burst();
+}
+
+/* الاختبار التفاعلي */
+
+const questions=[
+ {
+  q:'ما الشيء الذي يجعل اليوم أجمل؟',
+  a:['رسالة جميلة 💌','وردة مفاجئة 🌹','وقت جميل معًا 🌙','كل ما سبق 💗'],
+  f:['الرسائل تصبح أجمل عندما تكون صادقة 💌','الورد يليق بكِ 🌹','اللحظات الجميلة لا تُنسى 🌙','إجابة جميلة، تستحقين كل ذلك 💗']
+ },
+ {
+  q:'لو اخترتِ مكانًا لقضاء يوم مثالي؟',
+  a:['حديقة مليئة بالورود 🌸','شاطئ وقت الغروب 🌅','مكان مليء بالأضواء ✨','بيت دافئ وهادئ 🏡'],
+  f:['الورود ستغار من جمالكِ 🌸','الغروب لحظة ساحرة 🌅','الأضواء تليق بعالمكِ ✨','الدفء أجمل ما في العالم 🏡']
+ },
+ {
+  q:'أي هدية ستختارين؟',
+  a:['صندوق مفاجآت 🎁','رسالة طويلة 💌','باقة ورود 💐','يوم مليء بالمغامرات 🎡'],
+  f:['الصناديق تخفي أسرارًا جميلة 🎁','الكلمات الصادقة تبقى 💌','الورد لا يخطئ أبدًا 💐','المغامرات تصنع الذكريات 🎡']
+ }
+];
+
+let questionIndex=0;
+
+function choose(i){
+ const q=questions[questionIndex];
+ document.getElementById('quizFeedback').textContent=q.f[i];
+ burst();
+
+ questionIndex++;
+
+ if(questionIndex<questions.length){
+  setTimeout(()=>{
+   document.getElementById('question').textContent=questions[questionIndex].q;
+   document.getElementById('answers').innerHTML=
+    questions[questionIndex].a.map((a,index)=>
+     `<button class="answer" onclick="choose(${index})">${a}</button>`
+    ).join('');
+   document.getElementById('quizFeedback').textContent='اختاري إجابتكِ التالية 💗';
+  },1000);
+ }else{
+  document.getElementById('question').textContent='انتهى الاختبار! 🎉';
+  document.getElementById('answers').innerHTML=
+   '<p class="gold">كل إجاباتكِ كانت جميلة لأن صاحبتها أنتِ 💗</p>';
+  document.getElementById('quizFeedback').textContent='أنتِ الآن بطلة هذا الاختبار!';
+ }
+}
+
+/* صناديق الهدايا */
+
+const giftData=[
+ {
+  title:'هدية الورد 🌹',
+  text:'باقة من الورود لا تذبل، تحمل معها أمنية بأن تكون أيامكِ مليئة بالجمال.'
+ },
+ {
+  title:'هدية الدلال 🎀',
+  text:'يوم كامل من الدلال والضحك والحلوى والمفاجآت الصغيرة، لأنكِ تستحقين كل الأشياء اللطيفة.'
+ },
+ {
+  title:'هدية القلب 💝',
+  text:'قلب يتمنى لكِ السعادة والطمأنينة، ويحب أن يراكِ مبتسمة دائمًا.'
+ }
+];
+
+function openGift(i){
+ document.getElementById('giftTitle').textContent=giftData[i].title;
+ document.getElementById('giftText').textContent=giftData[i].text;
+ document.getElementById('giftResult').classList.add('show');
+ burst();
+}
+
+/* حديقة الأمنيات */
+
+const wishes=[
+ 'أمنيتي لكِ: أن تضحكي من قلبكِ كل يوم 🌷',
+ 'أمنيتي لكِ: أن تحققي كل ما تحلمين به 🌹',
+ 'أمنيتي لكِ: أن تحيطي نفسكِ بمن يحبونكِ بصدق 🌸',
+ 'أمنيتي لكِ: أن لا تفقدي شغفكِ بالأشياء الجميلة 🌺',
+ 'أمنيتي لكِ: أن تجدي الراحة في كل مكان 🌼',
+ 'أمنيتي لكِ: أن تبقى ابتسامتكِ مضيئة 💐'
+];
+
+function flower(i){
+ document.getElementById('flowerText').textContent=wishes[i];
+ document.getElementById('flowerMessage').classList.add('show');
+ burst();
+}
+
+/* لعبة النجوم */
+
+let score=0;
+
+function collect(element){
+ if(element.dataset.collected==='yes')return;
+
+ element.dataset.collected='yes';
+ element.style.opacity='.2';
+ element.style.pointerEvents='none';
+ element.textContent='💫';
+
+ score++;
+ document.getElementById('score').textContent=score;
+
+ if(score>=5){
+  document.getElementById('starReward').classList.add('show');
+  burst();
+ }
+}
+
+/* كلمة السر */
+
+function unlock(){
+ const value=document.getElementById('password').value.trim().toLowerCase();
+ const valid=['رانيا','رانية','rania','ranya'];
+
+ if(valid.includes(value)){
+  document.getElementById('unlockMessage').classList.add('show');
+  document.getElementById('passwordFeedback').textContent='تم فتح الباب بنجاح! ✨';
+  burst();
+ }else{
+  document.getElementById('passwordFeedback').textContent='ليست الكلمة الصحيحة، حاولي مرة أخرى 💗';
+ }
+}
+
+/* مؤثرات القلوب والاحتفال */
+
+const particleArea=document.getElementById('particles');
+const symbols=['💗','💕','✨','🌸','🌷','💖','🎀','⭐'];
+
+function particle(){
+ const el=document.createElement('span');
+ el.className='particle';
+ el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+ el.style.left=Math.random()*100+'%';
+ el.style.fontSize=(14+Math.random()*25)+'px';
+
+ const duration=6+Math.random()*7;
+ el.style.animationDuration=duration+'s';
+
+ particleArea.appendChild(el);
+ setTimeout(()=>el.remove(),duration*1000);
+}
+
+setInterval(particle,600);
+
+function burst(){
+ for(let i=0;i<20;i++){
+  setTimeout(particle,i*45);
+ }
+}
+
+function celebrate(){
+ burst();
+ for(let i=0;i<35;i++){
+  setTimeout(particle,i*75);
+ }
+ document.getElementById('celebration').textContent='🎉 عالمكِ مليء بالحب والنجوم والورود! 🎉';
+}
+
+/* السحب الأفقي على الهاتف */
+
+let startX=0;
+let endX=0;
+
+const viewport=document.querySelector('.viewport');
+
+viewport.addEventListener('touchstart',e=>{
+ startX=e.changedTouches[0].screenX;
+},{passive:true});
+
+viewport.addEventListener('touchend',e=>{
+ endX=e.changedTouches[0].screenX;
+ const delta=endX-startX;
+
+ if(Math.abs(delta)>75){
+  if(delta<0)next();
+  else previous();
+ }
+},{passive:true});
+
+/* لوحة المفاتيح */
+
+document.addEventListener('keydown',e=>{
+ if(e.key==='ArrowLeft')next();
+ if(e.key==='ArrowRight')previous();
+ if(e.key==='Enter' && page===8)unlock();
+});
+
+/* تشغيل أول صفحة */
+
+update();
+</script>
+
+</body>
+</html>
